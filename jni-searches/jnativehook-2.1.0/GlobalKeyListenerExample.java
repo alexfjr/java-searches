@@ -5,7 +5,7 @@ import org.jnativehook.keyboard.NativeKeyListener;
 
 public class GlobalKeyListenerExample implements NativeKeyListener {
 	public void nativeKeyPressed(NativeKeyEvent e) {
-		System.out.println("Key Pressed: " + NativeKeyEvent.getKeyText(e.getKeyCode()));
+		System.out.printf("Key Pressed: %s, code: %d\n",NativeKeyEvent.getKeyText(e.getKeyCode()),e.getKeyCode());
 
 		if (e.getKeyCode() == NativeKeyEvent.VC_ESCAPE) {
 			try {
@@ -17,11 +17,11 @@ public class GlobalKeyListenerExample implements NativeKeyListener {
 	}
 
 	public void nativeKeyReleased(NativeKeyEvent e) {
-		System.out.println("Key Released: " + NativeKeyEvent.getKeyText(e.getKeyCode()));
+		System.out.printf("Key Released: %s, code: %d\n",NativeKeyEvent.getKeyText(e.getKeyCode()),e.getKeyCode());
 	}
 
 	public void nativeKeyTyped(NativeKeyEvent e) {
-		System.out.println("Key Typed: " + NativeKeyEvent.getKeyText(e.getKeyCode()));
+		System.out.printf("Key Typed: %s, code: %d\n",NativeKeyEvent.getKeyText(e.getKeyCode()),e.getKeyCode());
 	}
 
 	public static void main(String[] args) {
